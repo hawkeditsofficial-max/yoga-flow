@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Yoga Flow — Simple Yoga Website</title>
+  <meta name="description" content="Daily yoga tips, poses, and guided practice.">
+  <style>
+    /* Simple, clean styling */
+    :root{--max:1100px;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    *{box-sizing:border-box}
+    body{font-family:var(--font,Inter),sans-serif;margin:0;color:#111;line-height:1.5}
+    .wrap{max-width:var(--max);margin:0 auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:52px;height:52px;border-radius:10px;background:linear-gradient(135deg,#7bd389,#4aa3ff);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+    nav a{margin-left:14px;text-decoration:none;color:inherit}
+    .hero{display:grid;grid-template-columns:1fr;gap:18px;align-items:center;margin:20px 0}
+    .hero-inner{background:#f7fbff;padding:20px;border-radius:12px}
+    h1{margin:0;font-size:clamp(20px,4vw,36px)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+    .card{background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(18,38,63,0.06)}
+    .poses img{width:100%;border-radius:8px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:8px;text-decoration:none;cursor:pointer}
+    .btn-primary{background:#4aa3ff;color:#fff}
+    .btn-ghost{background:transparent;border:1px solid #ddd}
+    footer{margin:40px 0 20px;color:#666;font-size:14px}
+    /* Blog list */
+    .post{border-left:4px solid #4aa3ff;padding:12px;margin-bottom:12px;border-radius:6px;background:#fbfdff}
+    .form-row{display:flex;flex-direction:column;margin-bottom:10px}
+    label{font-weight:600;margin-bottom:6px}
+    input[type=text],textarea{padding:10px;border-radius:8px;border:1px solid #ddd;font-size:15px}
+    textarea{min-height:100px}
+    /* small screens */
+    @media(min-width:760px){.hero{grid-template-columns:1fr 380px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">Y</div>
+        <div>
+          <div style="font-weight:700">Yoga Flow</div>
+          <div style="font-size:13px;color:#666">Daily yoga tips & poses</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#poses">Poses</a>
+        <a href="#blog">Daily Tips</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-inner card">
+        <h1>Welcome to Yoga Flow — Start your daily practice</h1>
+        <p>Short, clear yoga guidance: poses, benefits, and daily tips. Add a new tip by clicking the <strong>Add Today</strong> button.</p>
+
+        <div style="margin-top:12px">
+          <button class="btn btn-primary" id="addTodayBtn">➕ Add Today</button>
+          <a class="btn btn-ghost" href="#blog">See Daily Tips</a>
+        </div>
+
+        <hr style="margin:16px 0">
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <div style="min-width:160px">
+            <strong>Practice time</strong>
+            <div>10–30 minutes</div>
+          </div>
+          <div style="min-width:160px">
+            <strong>Beginner friendly</strong>
+            <div>Yes — step-by-step</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card">
+        <h3>Quick Routine</h3>
+        <ol>
+          <li>Warm-up (5 min)</li>
+          <li>Sun Salutation (5 rounds)</li>
+          <li>Standing poses (10 min)</li>
+          <li>Cool down & Savasana (5–10 min)</li>
+        </ol>
+        <p style="margin-top:10px">Tip: Breathe slowly and steadily throughout your practice.</p>
+      </aside>
+    </section>
+
+    <section id="about" style="margin-top:18px">
+      <div class="card">
+        <h2>About Yoga</h2>
+        <p>Yoga is a holistic practice that combines physical postures, breath control, and meditation. It improves flexibility, strength, balance, and mental clarity.</p>
+      </div>
+    </section>
+
+    <section id="poses" style="margin-top:18px">
+      <h2>Popular Poses</h2>
+      <div class="grid poses">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1554344727-3520b3f6f9b7?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="pose">
+          <h3>Downward Dog</h3>
+          <p>Stretches hamstrings and strengthens arms. Hold 30–60 seconds.</p>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1554469389-9a8b0d4b3fef?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="pose">
+          <h3>Warrior II</h3>
+          <p>Builds leg strength and focus. Hold 30–45 seconds each side.</p>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1540202404-9e6d6d4e3b1f?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="pose">
+          <h3>Tree Pose</h3>
+          <p>Improves balance and concentration. Hold 20–30 seconds each side.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog" style="margin-top:18px">
+      <h2>Daily Tips</h2>
+      <div id="postsContainer"></div>
+
+      <!-- hidden form modal (simple) -->
+      <div id="formWrap" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);align-items:center;justify-content:center;padding:20px">
+        <div style="max-width:700px;width:100%">
+          <div class="card">
+            <h3>Add Today's Tip</h3>
+            <div class="form-row"><label for="title">Title</label><input id="title" type="text" placeholder="e.g., 5-minute breathing" /></div>
+            <div class="form-row"><label for="content">Content</label><textarea id="content" placeholder="Write your tip, pose, or routine"></textarea></div>
+            <div style="display:flex;gap:8px;justify-content:flex-end">
+              <button id="savePost" class="btn btn-primary">Save</button>
+              <button id="cancel" class="btn btn-ghost">Cancel</button>
+            </div>
+            <p style="font-size:13px;color:#666;margin-top:8px">Posts are saved locally in your browser (localStorage). To publish online or share with others, follow the WordPress migration guide below.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:18px">
+      <h2>Contact</h2>
+      <div class="card">
+        <p>Email: <a href="mailto:yourname@example.com">yourname@example.com</a></p>
+        <p>Follow on YouTube / Instagram for videos</p>
+      </div>
+    </section>
+
+    <footer>
+      <div>Made with ❤️ · Yoga Flow</div>
+      <div style="margin-top:6px;color:#888">Tip: To make this site public for free, you can use GitHub Pages or Netlify. To add new content daily with a real admin panel, set up WordPress (instructions below).</div>
+    </footer>
+  </div>
+
+  <script>
+    // Simple client-side blog using localStorage so you can click "Add Today" and save posts.
+    const addBtn = document.getElementById('addTodayBtn');
+    const formWrap = document.getElementById('formWrap');
+    const cancel = document.getElementById('cancel');
+    const savePost = document.getElementById('savePost');
+    const postsContainer = document.getElementById('postsContainer');
+
+    function openForm(){ formWrap.style.display='flex'; document.getElementById('title').value=''; document.getElementById('content').value=''; }
+    function closeForm(){ formWrap.style.display='none'; }
+
+    addBtn.addEventListener('click',openForm);
+    cancel.addEventListener('click',closeForm);
+
+    function loadPosts(){
+      const posts = JSON.parse(localStorage.getItem('yoga_posts')||'[]');
+      postsContainer.innerHTML = '';
+      if(!posts.length) postsContainer.innerHTML = '<div class="card">No tips yet — click Add Today to create one.</div>';
+      posts.slice().reverse().forEach(p=>{
+        const el = document.createElement('div'); el.className='post';
+        el.innerHTML = `<h3>${escapeHtml(p.title)}</h3><p style="margin:6px 0 6px;color:#444">${escapeHtml(p.content)}</p><div style="font-size:12px;color:#666">${new Date(p.date).toLocaleString()}</div>`;
+        postsContainer.appendChild(el);
+      })
+    }
+
+    function escapeHtml(str){ if(!str) return ''; return str.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;') }
+
+    savePost.addEventListener('click',()=>{
+      const title = document.getElementById('title').value.trim();
+      const content = document.getElementById('content').value.trim();
+      if(!title && !content){ alert('Please write a title or content.'); return; }
+      const posts = JSON.parse(localStorage.getItem('yoga_posts')||'[]');
+      posts.push({title,content,date: new Date().toISOString()});
+      localStorage.setItem('yoga_posts', JSON.stringify(posts));
+      closeForm(); loadPosts();
+    })
+
+    // initial load
+    loadPosts();
+  </script>
+</body>
+</html>
